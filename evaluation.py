@@ -101,7 +101,7 @@ if __name__ == '__main__':
         example['text'] = instruction + '\n' + '\n'.join(final_lst)
         return example
 
-    free_type = 'instruction_interference'
+    free_type = 'misleading_instruction'
     data = {}
     with torch.no_grad():
         for task_name in tqdm.tqdm(task_names):
@@ -110,7 +110,7 @@ if __name__ == '__main__':
                 eval_dataset = eval_dataset.map(context_free)
             elif free_type == 'instruction_free':
                 eval_dataset = eval_dataset.map(instruction_free)
-            elif free_type == 'instruction_interference':
+            elif free_type == 'misleading_instruction':
                 eval_dataset = eval_dataset.map(instruction_interference)
             elif free_type == 'normal':
                 pass
@@ -141,4 +141,4 @@ if __name__ == '__main__':
             print(result, flush=True)
             data[task_name] = [result['eval_loss'], result['eval_custom_loss']]
 
-        torch.save(data, f'results/{free_type}' + '.pth')
+        torch.save(data, f'results/centaur-{free_type}' + '.pth')
