@@ -1,5 +1,5 @@
 # Centaur evaluation
-Code for the paper "Can Centaur Truly Simulate Human Cognition? The Fundamental Limitation of Instruction Understanding". 
+Code for the paper "[Can Centaur Truly Simulate Human Cognition? The Fundamental Limitation of Instruction Understanding](https://y1ny.github.io/assets/centaur-evaluation.pdf)". 
 
 See original Centaur [paper](https://www.nature.com/articles/s41586-025-09215-4) and [repo](https://github.com/marcelbinz/Llama-3.1-Centaur-70B/).
 
